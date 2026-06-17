@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poliambulatorio Sidoli — Dentista e specialisti a Parma</title>
+  <meta name="description" content="Poliambulatorio Sidoli a Parma: odontoiatria, implantologia, ortodonzia, igiene e estetica dentale. Oltre 20 anni di esperienza. Prima visita senza impegno." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #14233a;
+      --blue: #1d63b8;
+      --blue-deep: #15294a;
+      --blue-soft: #7fb4ee;
+      --bg: #f5f8fc;
+      --card: #ffffff;
+      --muted: #5a6a80;
+      --line: #e3eaf3;
+      --radius: 18px;
+      --shadow: 0 18px 50px -24px rgba(29, 99, 184, 0.45);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 600; line-height: 1.12; letter-spacing: -0.01em; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, 92%); margin: 0 auto; }
+    .btn { display: inline-flex; align-items: center; gap: .5rem; background: var(--blue); color: #fff; font-weight: 600; padding: .85rem 1.5rem; border-radius: 999px; transition: transform .15s ease, box-shadow .15s ease; box-shadow: 0 10px 24px -10px rgba(29,99,184,.7); }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 16px 30px -12px rgba(29,99,184,.8); }
+    .btn.ghost { background: transparent; color: var(--blue); box-shadow: none; border: 1.5px solid var(--line); }
+
+    header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(10px); background: rgba(245,248,252,.8); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 1rem 0; }
+    .logo { display: flex; align-items: center; gap: .6rem; font-family: 'Fraunces', serif; font-size: 1.2rem; font-weight: 600; }
+    .logo .dot { width: 32px; height: 32px; border-radius: 9px; background: linear-gradient(135deg, var(--blue), var(--blue-soft)); display: grid; place-items: center; color: #fff; font-size: 1rem; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; font-size: .95rem; font-weight: 500; }
+    .nav-links a.cta { color: var(--blue); }
+    @media (max-width: 760px) { .nav-links { display: none; } }
+
+    .hero { padding: 5rem 0 4rem; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 3rem; align-items: center; }
+    .pill { display: inline-flex; align-items: center; gap: .5rem; font-size: .82rem; font-weight: 600; color: var(--blue); background: #e6f0fb; padding: .4rem .9rem; border-radius: 999px; margin-bottom: 1.4rem; }
+    .hero h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); }
+    .hero p.lead { font-size: 1.15rem; color: var(--muted); margin: 1.3rem 0 2rem; max-width: 31rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .hero-visual { background: linear-gradient(160deg, #1d63b8, #15294a); border-radius: 28px; aspect-ratio: 4/5; position: relative; overflow: hidden; box-shadow: var(--shadow); }
+    .hero-visual .smile { position: absolute; inset: 0; display: grid; place-items: center; font-size: 8rem; }
+    .hero-visual .badge { position: absolute; bottom: 1.2rem; left: 1.2rem; right: 1.2rem; background: rgba(255,255,255,.96); border-radius: 14px; padding: 1rem 1.2rem; display: flex; align-items: center; gap: .9rem; }
+    .hero-visual .badge .stars { color: #f5a524; font-weight: 700; white-space: nowrap; }
+    .hero-visual .badge small { color: var(--muted); }
+    @media (max-width: 760px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { aspect-ratio: 16/12; } }
+
+    .trust { display: flex; gap: 2.5rem; flex-wrap: wrap; justify-content: space-between; padding: 2rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .trust .stat { text-align: center; flex: 1; min-width: 120px; }
+    .trust .stat b { font-family: 'Fraunces', serif; font-size: 2rem; color: var(--blue); display: block; }
+    .trust .stat span { font-size: .9rem; color: var(--muted); }
+
+    section { padding: 4.5rem 0; }
+    .eyebrow { color: var(--blue); font-weight: 600; font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
+    .section-head { max-width: 40rem; margin-bottom: 2.6rem; }
+    .section-head h2 { font-size: clamp(1.9rem, 4vw, 2.6rem); margin: .6rem 0; }
+    .section-head p { color: var(--muted); }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    @media (max-width: 860px) { .cards { grid-template-columns: 1fr; } }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.8rem; transition: transform .18s ease, box-shadow .18s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .card .ico { width: 52px; height: 52px; border-radius: 14px; background: #e6f0fb; display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 1.1rem; }
+    .card h3 { font-size: 1.25rem; margin-bottom: .5rem; }
+    .card p { color: var(--muted); font-size: .96rem; }
+
+    .about { background: var(--blue-deep); color: #eaf2fd; border-radius: 28px; padding: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: center; }
+    .about h2 { color: #fff; font-size: 2.2rem; }
+    .about p { color: #b9ccdf; margin-top: 1rem; }
+    .about ul { list-style: none; margin-top: 1.4rem; display: grid; gap: .7rem; }
+    .about li { display: flex; gap: .7rem; align-items: flex-start; color: #eaf2fd; }
+    .about li::before { content: "✓"; color: var(--blue-soft); font-weight: 700; }
+    @media (max-width: 760px) { .about { grid-template-columns: 1fr; padding: 2rem; } }
+
+    .quotes { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; }
+    @media (max-width: 860px) { .quotes { grid-template-columns: 1fr; } }
+    .quote { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.6rem; }
+    .quote .stars { color: #f5a524; margin-bottom: .6rem; }
+    .quote p { font-size: .98rem; }
+    .quote .who { margin-top: 1rem; font-weight: 600; font-size: .9rem; }
+
+    .final { text-align: center; background: linear-gradient(160deg, #1d63b8, #15294a); color: #fff; border-radius: 28px; padding: 3.5rem 2rem; box-shadow: var(--shadow); }
+    .final h2 { color: #fff; font-size: clamp(1.9rem, 4vw, 2.6rem); }
+    .final p { color: #cfe2f7; margin: 1rem auto 2rem; max-width: 32rem; }
+    .final .btn { background: #fff; color: var(--blue); }
+
+    footer { padding: 3rem 0 2rem; color: var(--muted); font-size: .9rem; }
+    .foot-grid { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 2rem; }
+    .demo-tag { position: fixed; bottom: 14px; right: 14px; background: #14233a; color: #fff; font-size: .75rem; padding: .5rem .9rem; border-radius: 999px; opacity: .85; z-index: 50; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="logo"><span class="dot">S</span> Poliambulatorio Sidoli</div>
+      <nav class="nav-links">
+        <a href="#servizi">Servizi</a>
+        <a href="#studio">Chi siamo</a>
+        <a href="#recensioni">Recensioni</a>
+        <a href="#contatti" class="cta">Prenota visita →</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="pill">● Oltre 20 anni al servizio di Parma</span>
+          <h1>La salute del tuo sorriso, in mani esperte.</h1>
+          <p class="lead">Poliambulatorio Sidoli a Parma: odontoiatria, implantologia, ortodonzia ed estetica dentale. Un team di specialisti, tecnologia moderna e un ambiente sereno, dal 2003.</p>
+          <div class="hero-actions">
+            <a href="#contatti" class="btn">Prenota la prima visita</a>
+            <a href="#servizi" class="btn ghost">Scopri i servizi</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="smile">🦷</div>
+          <div class="badge">
+            <span class="stars">★ 4,8</span>
+            <small>la fiducia di migliaia di pazienti a Parma</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="trust">
+        <div class="stat"><b>20+</b><span>anni di attività</span></div>
+        <div class="stat"><b>10.000+</b><span>pazienti seguiti</span></div>
+        <div class="stat"><b>6</b><span>specialità mediche</span></div>
+        <div class="stat"><b>0%</b><span>finanziamento a tasso zero</span></div>
+      </div>
+    </div>
+
+    <section id="servizi">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">I nostri servizi</span>
+          <h2>Cure odontoiatriche complete, sotto lo stesso tetto</h2>
+          <p>Dalla prevenzione all'estetica avanzata, con un piano di cura chiaro e personalizzato per ogni paziente.</p>
+        </div>
+        <div class="cards">
+          <div class="card"><div class="ico">🦷</div><h3>Implantologia</h3><p>Denti fissi e naturali per sostituire quelli mancanti, con tecniche moderne e mini-invasive.</p></div>
+          <div class="card"><div class="ico">😁</div><h3>Ortodonzia</h3><p>Apparecchi tradizionali e mascherine trasparenti per allineare il sorriso a ogni età.</p></div>
+          <div class="card"><div class="ico">✨</div><h3>Estetica dentale</h3><p>Sbiancamento professionale e faccette per un sorriso luminoso e armonioso.</p></div>
+          <div class="card"><div class="ico">🪥</div><h3>Igiene e prevenzione</h3><p>Sedute di igiene professionale per gengive e denti sani nel tempo.</p></div>
+          <div class="card"><div class="ico">🩺</div><h3>Conservativa e endodonzia</h3><p>Curiamo carie e canali radicolari preservando il più possibile il dente naturale.</p></div>
+          <div class="card"><div class="ico">🚨</div><h3>Urgenze odontoiatriche</h3><p>Dolore improvviso? Riserviamo ogni giorno spazi dedicati alle emergenze.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="studio">
+      <div class="wrap">
+        <div class="about">
+          <div>
+            <span class="eyebrow" style="color:var(--blue-soft)">Chi siamo</span>
+            <h2>Da oltre vent'anni, un punto di riferimento a Parma</h2>
+            <p>Il Poliambulatorio Sidoli unisce odontoiatria e specialisti medici in un'unica struttura accogliente. Ti accompagniamo con calma, spiegandoti ogni trattamento prima di iniziare.</p>
+          </div>
+          <ul>
+            <li>Team di specialisti con esperienza pluriennale</li>
+            <li>Tecnologia digitale: più precisione, meno fastidi</li>
+            <li>Preventivi chiari e trasparenti, senza sorprese</li>
+            <li>Finanziamenti a tasso zero su misura</li>
+            <li>Struttura comoda e facilmente raggiungibile a Parma</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="recensioni">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Dicono di noi</span>
+          <h2>La fiducia dei nostri pazienti</h2>
+          <p>Esempi di recensioni — nella versione finale colleghiamo le vostre recensioni Google reali.</p>
+        </div>
+        <div class="quotes">
+          <div class="quote"><div class="stars">★★★★★</div><p>"Personale competente e gentilissimo. Mi sono sempre trovata benissimo, lo consiglio a tutti."</p><div class="who">— Paziente verificato</div></div>
+          <div class="quote"><div class="stars">★★★★★</div><p>"Professionalità e disponibilità. Spiegano tutto con chiarezza e i prezzi sono onesti."</p><div class="who">— Paziente verificato</div></div>
+          <div class="quote"><div class="stars">★★★★★</div><p>"Struttura seria e ben organizzata. Finalmente un posto di cui fidarsi a Parma."</p><div class="who">— Paziente verificato</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatti">
+      <div class="wrap">
+        <div class="final">
+          <h2>Prenota la tua prima visita</h2>
+          <p>Prima visita e preventivo senza impegno. Ti aspettiamo in Via Giuditta Sidoli 4, a Parma.</p>
+          <a href="tel:+390521482606" class="btn">📞 Chiama ora: 0521 482606</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot-grid">
+      <div>
+        <div class="logo" style="font-size:1.1rem"><span class="dot">S</span> Poliambulatorio Sidoli</div>
+        <p style="margin-top:.7rem; max-width:18rem;">Via Giuditta Sidoli, 4 — 43123 Parma</p>
+      </div>
+      <div><strong>Orari</strong><br />Lun–Ven 9:00–19:00<br />Sab su appuntamento</div>
+      <div><strong>Contatti</strong><br />0521 482606<br />Prenota online</div>
+    </div>
+    <div class="wrap" style="margin-top:1.5rem; opacity:.6;">© 2026 Poliambulatorio Sidoli — Parma</div>
+  </footer>
+
+  <div class="demo-tag">⚡ Sito demo realizzato per voi — gratuito</div>
+</body>
+</html>
