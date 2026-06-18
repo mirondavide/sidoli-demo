@@ -96,9 +96,10 @@
     .demo-tag { position: fixed; bottom: 14px; right: 14px; background: #14233a; color: #fff; font-size: .75rem; padding: .5rem .9rem; border-radius: 999px; opacity: .85; z-index: 50; }
     .foto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
     @media (max-width: 760px) { .foto-grid { grid-template-columns: 1fr; } }
-    .foto-card { border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/10; background: linear-gradient(135deg, var(--blue), var(--blue-deep)); display: flex; align-items: flex-end; padding: 1.2rem; }
-    .foto-card img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .foto-card span { color: rgba(255,255,255,.75); font-size: .85rem; font-weight: 500; }
+    .foto-card { border-radius: var(--radius); overflow: hidden; aspect-ratio: 16/10; background: linear-gradient(135deg, var(--blue), var(--blue-deep)); display: flex; align-items: flex-end; padding: 1.2rem; position: relative; }
+    .foto-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .foto-card span { color: rgba(255,255,255,.75); font-size: .85rem; font-weight: 500; position: relative; z-index: 1; }
+    .hero-visual img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
   </style>
 </head>
 <body>
@@ -127,7 +128,7 @@
           </div>
         </div>
         <div class="hero-visual">
-          <div class="smile">🦷</div>
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80&auto=format&fit=crop" alt="Studio dentistico moderno" loading="lazy" />
           <div class="badge">
             <span class="stars">★ 4,8</span>
             <small>la fiducia di migliaia di pazienti a Parma</small>
@@ -186,9 +187,9 @@
       <div class="wrap">
         <div class="section-head"><span class="eyebrow">Lo studio</span><h2>Un ambiente pensato per te</h2><p>Spazi accoglienti, tecnologie moderne e un team che ti mette subito a proprio agio.</p></div>
         <div class="foto-grid">
-          <div class="foto-card"><span>Reception e accoglienza</span></div>
-          <div class="foto-card" style="background:linear-gradient(135deg,#15294a,#0d1e38)"><span>Sala trattamenti</span></div>
-          <div class="foto-card" style="background:linear-gradient(135deg,#1a3a6b,#15294a)"><span>Strumentazione moderna</span></div>
+          <div class="foto-card"><img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80&auto=format&fit=crop" alt="Reception" loading="lazy" /><span>Reception</span></div>
+          <div class="foto-card"><img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600&q=80&auto=format&fit=crop" alt="Sala trattamenti" loading="lazy" /><span>Sala trattamenti</span></div>
+          <div class="foto-card"><img src="https://images.unsplash.com/photo-1616391182219-e080b4d1043a?w=600&q=80&auto=format&fit=crop" alt="Strumentazione moderna" loading="lazy" /><span>Strumentazione moderna</span></div>
         </div>
       </div>
     </section>
